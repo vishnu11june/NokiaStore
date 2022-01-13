@@ -1,0 +1,120 @@
+.slds-size_3-of-3{
+    background-color: #ffff !important;
+    border-radius: 5px;
+    border:1px solid lightgray;
+    box-shadow: 0 0 8px lightgray;
+}
+
+/*Text sizing */
+.slds-theme_alert-texture{
+    font-weight: 500;
+    font-size: 16px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    
+}
+
+/*borders and radius setting */
+.slds-theme_alert-texture{
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+
+
+
+/*button*/
+.slds-m-bottom_small{
+    text-align: right;
+    padding: 1% 0;
+    font-size: 14px;
+    font-weight: 500;
+    word-spacing: 1px;
+    color: white;
+}
+
+/* Grand Total */
+.amount-style{
+    border:none;
+    border-radius: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color:#ab0000;
+}
+
+.size-adjust{
+    width: 95%;
+    float: right;
+}
+.slds-wrap{
+    padding: 0.5% 1%;
+}
+
+/* btn styl */
+.slds-button{
+    border-radius: 30px;
+    letter-spacing: 2px;
+}
+
+/* cards css */ 
+.card-size{
+    width: 4.5%;
+    height: 2.8%;
+    margin-left: 1%;
+}
+.pay_msg{
+    z-index: +5;
+    padding: 2%;
+    background-color: green;
+    margin:auto;
+    text-align: center;
+    
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.paygif{
+    width: 15rem;
+    height: 15rem;
+    
+    border-radius: 50%;
+}
+
+.pmt-msg{
+    color:white;
+    font-size: 22px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-style: oblique;
+}
+.thanks-msg{
+    font-size: 16px;
+    font-style: normal;
+    
+}
+
+.url-txt{
+    margin:auto;
+    background-color: #0b5cab;
+    border-radius: 5px;
+    margin-top: 1%;
+    text-align: center;
+}
+.linkcls{
+    color:#ffff;
+    font-size: 30px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+}
+
+.displayNone{
+    display: none;
+}
+
+.displayConfirm{
+    display: block;
+}

@@ -1,0 +1,85 @@
+<template>
+    <div class="displayNone" data-id="showToast">
+   <div class="pay_msg">
+    <div class="pmt-msg">Your payment was successful<br/>
+    <span class="thanks-msg">Thanks for shopping...</span></div>
+    <img src={paymentMsg} class="paygif" alt="visa card"/>
+   </div>
+   <div class="url-txt"><a class="linkcls" href="https://vishnu11june-developer-edition.ap27.force.com/VishnuSharma">Back to store</a></div>
+</div>
+    <div data-id="pmtCmp" class="slds-size_3-of-3">
+        
+       
+        <!--Grand Total-->
+        <div class="demo-only demo-only--sizing slds-grid">
+            <div  class="slds-size_1-of-2">
+              <div class="slds-box slds-box_x-small slds-text-align_left amount-style">Total payable amount
+                
+              </div>
+            </div>
+            <div class="slds-size_1-of-2">
+              <div class="slds-box slds-box_x-small slds-text-align_right amount-style">&#x24;{GrandTotal}</div>
+            </div>
+            </div>
+        <!--Heading-->
+     <div class="slds-box slds-theme_shade slds-theme_alert-texture slds-grid">
+        <div  class="slds-size_1-of-2">
+            <div class="slds-text-align_left">Provide Card Details</div>
+          </div>
+          <div class="slds-size_1-of-2">
+            <div class="slds-text-align_right">
+                <img src={visaCard} class="card-size" alt="visa card"/>
+                <img src={masterCard} class="card-size" alt="master card"/>
+                <img src={jcbCard} class="card-size" alt="jcb card"/>
+                <img src={dinnersCard} class="card-size" alt="dinners card"/>
+                <img src={amexCard} class="card-size" alt="amex card"/>
+            </div>
+          </div>
+
+     </div> 
+       <!--Main Body-->
+       <div class="slds-size_2-of-2 slds-theme_default">
+        <!--Name on card-->
+        <div class="slds-wrap">
+            <lightning-input type="text" label="Name on Card" value={nameOnCard} onchange={customerName} placeholder="Enter a name..." required></lightning-input>
+        </div>
+        <!--Car type-->
+        <div class="slds-wrap">
+        <lightning-combobox name="progress" label="Card Type" value={value} placeholder="Select a card type..."  options={options} onchange={handleChange} required></lightning-combobox>
+        </div>
+        <!--Card number and cvc-->
+        <div class="slds-grid slds-wrap">
+            <!--Card number-->
+            <div class="slds-size_1-of-2">
+                <lightning-input type="text" label="Card Number" value={cardDigits} onchange={cardNumber} placeholder="Enter card number..." required></lightning-input>
+            </div>
+            <!--cvc-->
+            <div class="slds-size_1-of-2">
+                
+                <lightning-input  type="password" class="size-adjust" label="CVV" value={CVC} onchange={CVCNumber} placeholder="Enter a CVV..." required></lightning-input>
+            
+            </div>
+        </div>
+        <!--Card expiry month and year-->
+        <div class="slds-grid slds-wrap">
+            
+             <!--Expiry Month-->
+             <div class="slds-size_1-of-2">
+                <lightning-combobox name="exp_month" label="Expiry Month" value={selectedMonth} placeholder="MM" options={cardExpMonths} onchange={onMonthChange} required></lightning-combobox>
+            </div>
+            <!--Expiry year-->
+            <div class="slds-size_1-of-2">
+                <lightning-combobox name="exp_year" class="size-adjust" label="Expiry Year" value={selectedYear} placeholder="YYYY" options={cardExpyear} onchange={onYearChange} required></lightning-combobox>
+            </div>
+        </div>
+        <!--Billing address-->
+        <div class="slds-wrap">
+            <lightning-combobox name="Billing address" label="Billing  Address" placeholder="Select billing address..." value={selectedBillingAddress}  options={BillingAddressInfo} onchange={setBillingAddress}></lightning-combobox>
+        </div>
+        <!--Submit button-->
+        <div class="slds-m-bottom_small slds-wrap">
+            <button class="slds-button slds-button_brand" title="Primary action" onclick={paymentInfo}>Make Payment</button>
+        </div>
+       </div>
+    </div>
+</template>
