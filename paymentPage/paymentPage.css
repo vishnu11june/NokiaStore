@@ -2,7 +2,7 @@
     background-color: #ffff !important;
     border-radius: 5px;
     border:1px solid lightgray;
-    box-shadow: 0 0 8px lightgray;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
 }
 
 /*Text sizing */
@@ -117,4 +117,8 @@
 
 .displayConfirm{
     display: block;
+}
+.current-card-size{
+    width: 30px;
+    height: 5%;
 }

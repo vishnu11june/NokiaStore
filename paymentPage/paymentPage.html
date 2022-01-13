@@ -30,8 +30,7 @@
             <div class="slds-text-align_right">
                 <img src={visaCard} class="card-size" alt="visa card"/>
                 <img src={masterCard} class="card-size" alt="master card"/>
-                <img src={jcbCard} class="card-size" alt="jcb card"/>
-                <img src={dinnersCard} class="card-size" alt="dinners card"/>
+               
                 <img src={amexCard} class="card-size" alt="amex card"/>
             </div>
           </div>
@@ -41,22 +40,32 @@
        <div class="slds-size_2-of-2 slds-theme_default">
         <!--Name on card-->
         <div class="slds-wrap">
-            <lightning-input type="text" label="Name on Card" value={nameOnCard} onchange={customerName} placeholder="Enter a name..." required></lightning-input>
+            <lightning-input type="text" label="Name on Card" value={nameOnCard} onchange={customerName} pattern={nameFieldRegex} message-when-pattern-mismatch="Invalid name" placeholder="Enter a name..." required></lightning-input>
         </div>
-        <!--Car type-->
+        <!--Car type-
         <div class="slds-wrap">
         <lightning-combobox name="progress" label="Card Type" value={value} placeholder="Select a card type..."  options={options} onchange={handleChange} required></lightning-combobox>
-        </div>
+        </div>-->
         <!--Card number and cvc-->
         <div class="slds-grid slds-wrap">
             <!--Card number-->
-            <div class="slds-size_1-of-2">
-                <lightning-input type="text" label="Card Number" value={cardDigits} onchange={cardNumber} placeholder="Enter card number..." required></lightning-input>
+            <div class="slds-size_3-of-4">
+                <div class="slds-grid slds-wrap" style="padding:0;">
+                <div class="slds-size_3-of-4">
+                <lightning-input type="text" label="Card Number" value={cardDigits}  onchange={cardNumber} pattern="^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(3[47][0-9]{13}))" message-when-pattern-mismatch="Invalid card number"  placeholder="Enter card number..." required></lightning-input>
+            </div>
+            <div class="slds-size_1-of-4">
+                <label class="slds-form-element__label slds-no-flex" style="height:1.4rem;"></label>
+                <div class="slds-form-element__control slds-grow">
+                <img src={currCredCard} class="current-card-size"/>
+            </div>
+            </div>
+        </div>
             </div>
             <!--cvc-->
-            <div class="slds-size_1-of-2">
+            <div class="slds-size_1-of-4">
                 
-                <lightning-input  type="password" class="size-adjust" label="CVV" value={CVC} onchange={CVCNumber} placeholder="Enter a CVV..." required></lightning-input>
+                <lightning-input  type="password" class="size-adjust" label="CVV" value={CVC} pattern="^[0-9]{3,4}$"  message-when-pattern-mismatch="Invalid cvv"  onchange={CVCNumber} placeholder="Enter a CVV..." required></lightning-input>
             
             </div>
         </div>
@@ -82,4 +91,5 @@
         </div>
        </div>
     </div>
+   
 </template>
